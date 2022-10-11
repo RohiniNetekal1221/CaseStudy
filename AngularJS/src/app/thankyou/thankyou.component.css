@@ -1,0 +1,24 @@
+.outerDiv
+{
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 50px;
+}
+
+.innerDiv
+{
+    width:35vw;
+    height: 50vh;
+    /* background-color: whitesmoke; */
+    background-color: white;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid rgb(238, 161, 46);
+    font-size: 50px;
+    text-align: center;
+}

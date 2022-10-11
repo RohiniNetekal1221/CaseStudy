@@ -1,0 +1,31 @@
+
+.container {
+	background-color: #fff;
+	border-radius: 10px;
+  	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+    max-height: 100%;
+}
+
+.form-container {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.sign-in-container {
+
+	width: 100%;
+
+}
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}

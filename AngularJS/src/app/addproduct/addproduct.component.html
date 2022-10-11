@@ -1,0 +1,160 @@
+<section data-bs-version="5.1" class="menu menu2 cid-t9g44nJ1EI" once="menu" id="menu2-0">
+    
+  <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+      <div class="container-fluid">
+          <div class="navbar-brand">
+              <span class="navbar-logo">
+                  <a href="https://mobiri.se">
+                     
+                     &nbsp;&nbsp;&nbsp; <img src="../assets/images/1655690233138.png" alt="Mobirise Website Builder" style="height: 5.3rem;">
+                  </a>
+              </span>
+              <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-5" href="https://mobiri.se">Furni-Tour</a></span>
+          </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <div class="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+<!--                    
+                  <li class="nav-item"><a class="nav-link link text-black display-4"  id="fon" routerLink="/profile"><span class="mobi-mbri mobi-mbri-user mbr-iconfont mbr-iconfont-btn"></span>Profile</a></li>
+                  <li class="nav-item"><a class="nav-link link text-black display-4"  id="fon" routerLink="/cart"><span class="mobi-mbri mobi-mbri-shopping-cart mbr-iconfont mbr-iconfont-btn"></span>Cart</a></li> -->
+              </ul>
+              <style>
+                #fon{
+                  font-size: 18px;
+                }
+              </style>
+              <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" routerLink="" ><span class="mobi-mbri mobi-mbri-login mbr-iconfont mbr-iconfont-btn"></span>Logout</a></div>
+          </div>
+      </div>
+  </nav>
+</section><br><br><br>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 40%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    font-size: 18px;
+  }
+  .center {
+  margin-left: auto;
+  margin-right: auto;
+}
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: #2b2b2c;
+    color: white;
+  }
+  </style>
+<br /><br />
+<h3 class="center" >Available Category</h3><br>
+<table class="center" id="tab">
+   <tr>
+    <th>Category Name</th>
+    <th>Category ID</th>
+   </tr>
+
+  <tr *ngFor=" let data of category | async">
+    <td id="yy">{{data.categoryName}}</td>
+    <td id="yy">{{data.categoryID}}</td>
+ 
+  </tr>
+   
+</table>
+ <div class="main-block">
+     
+      
+      
+       
+
+
+          <form (ngSubmit)="onSubmit()">
+          
+            <div class="form-group">
+              <label for="name">Category ID</label>
+              <input
+                type="text"
+                class="form-control"
+                id="categoryid"
+                required
+                [(ngModel)]="product.categoryID"
+                name="categorid" 
+                required
+              />
+            </div>
+
+
+            <div class="form-group">
+              <label for="name">ProductName</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productName"
+                required
+                [(ngModel)]="product.productName"
+                name="productName" 
+                required
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">productPrice</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productPrice"
+                required
+                [(ngModel)]="product.productPrice"
+                name="productPrice"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">productDescription</label>
+              <input
+                type="text"
+                class="form-control"
+                id="productDescription"
+                required
+                [(ngModel)]="product.productDescription"
+                name="productDescription"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">productImage path Url</label>
+              <input
+                type="text" 
+                class="form-control"
+                id="productImage"
+                required
+                [(ngModel)]="product.productImage"
+                name="productImage"
+              />
+              
+            </div>
+        
+                    
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        
+        
+        
+        
+    </div>
+
+    
+    
+ 
+    <app-footer></app-footer>

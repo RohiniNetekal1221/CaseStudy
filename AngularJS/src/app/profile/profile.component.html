@@ -1,0 +1,129 @@
+<p>profile works!</p>
+
+<h3>Profile</h3>
+<app-header></app-header>
+
+ <div class="main-block">
+      <div class="left-part">
+      
+        <img src="https://img.freepik.com/free-vector/resume-concept-illustration_114360-103.jpg?t=st=1655696301~exp=1655696901~hmac=b4b8802df16603e1cacf334b1d08409db5167d0daaf6c91c2e1325d0ee9784da&w=740" style="width: 70%; height:auto">
+         
+        <br>
+        <br>
+        <p></p>
+        
+      </div>
+      
+      <form action="/">
+
+        <div class="title">
+        
+          <h2>&nbsp;&nbsp; Profile</h2>
+        </div>
+
+        <div [hidden]="submitted" style="width: 400px">
+
+
+          <form (ngSubmit)="onSubmit()">
+            
+        
+            <div class="form-group">
+              <label for="name">CustomerName</label>
+              <input
+                type="text"
+                class="form-control"
+                id="customerName"
+                required
+                [(ngModel)]="customer.customerName"
+                name="customerName"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">Date of Birth</label>
+              <input
+                type="text"
+                class="form-control"
+                id="dateofbirth"
+                required
+                [(ngModel)]="customer.dateofbirth"
+                name="dateofbirth"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">Phone</label>
+              <input
+                type="text"
+                class="form-control"
+                id="phone"
+                required
+                [(ngModel)]="customer.phone"
+                name="phone"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                required
+                [(ngModel)]="customer.email"
+                name="email"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">address</label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                required
+                [(ngModel)]="customer.address"
+                name="emailId"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                required
+                [(ngModel)]="customer.username"
+                name="firstName"
+              />
+            </div>
+        
+            <div class="form-group">
+              <label for="name">Password</label>
+              <input
+                type="text"
+                class="form-control"
+                id="password"
+                required
+                [(ngModel)]="customer.password"
+                name="lastName"
+              />
+            </div>
+        
+            <button type="submit" class="btn btn-success">Submit</button>
+          </form>
+        
+        
+        
+        </div>
+        
+        <div [hidden]="!submitted">
+          <h4>You submitted successfully!</h4>
+          <!-- <-- <button class="btn btn-success" (click)="newCustomer()">Add</button> --> -->
+        </div>
+        
+      </form>
+    </div>
+
+<app-footer></app-footer>

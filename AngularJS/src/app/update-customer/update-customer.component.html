@@ -1,0 +1,34 @@
+<p>update-customer works!</p>
+<app-header></app-header>
+<h3>Create Customer</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="updateCustomer()">
+    <div class="form-group">
+        <label for="name">Id</label>
+        <input type="text" class="form-control" id="id" required [(ngModel)]="model.id" name="id">
+      </div>
+
+    <div class="form-group">
+      <label for="name">Username</label>
+      <input type="text" class="form-control" id="username" required [(ngModel)]="model.username" name="username">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Password</label>
+      <input type="text" class="form-control" id="password" required [(ngModel)]="model.password" name="password">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="model.email" name="email">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Phone</label>
+        <input type="text" class="form-control" id="phone" required [(ngModel)]="model.phone" name="phone">
+      </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<app-footer></app-footer>

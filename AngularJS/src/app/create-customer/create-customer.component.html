@@ -1,0 +1,145 @@
+<div class="main-block">
+
+  <div class="left-part">
+    <img src="" style="width:500px;height: auto;">
+    <br>
+    <br>
+    <p></p>
+  </div>
+
+  <form action="/">
+    <div class="title">
+      <i class="fas fa-graduation-cap"></i>
+      <h2>Register here</h2>
+    </div>
+    <div [hidden]="submitted" style="width: 400px">
+      <form (ngSubmit)="onSubmit()">
+
+
+      <div class="form-group">
+          <label for="name">CustomerName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="customerName"
+            required
+            [(ngModel)]="customer.customerName"
+            name="customerName" 
+            required
+            [(ngModel)]="customer.customerName"
+                name="customerName" 
+                #customerName="ngModel"
+                [class.is-invalid]="customerName.invalid && customerName.touched">
+                <small class = "text-danger"[class.d-none]="(customerName.value == customerName.value) || customerName.untouched">Customer Name is required field</small>
+        </div>
+
+    
+
+        <div class="form-group">
+          <label for="name">Date of Birth</label>
+          <input
+            type="date"
+            class="form-control"
+            id="dateofbirth"
+            required
+            [(ngModel)]="customer.dateofbirth"
+            name="dateofbirth"
+            #dateofbirth="ngModel"
+                [class.is-invalid]="dateofbirth.invalid && dateofbirth.touched">
+                <small class = "text-danger"[class.d-none]="(dateofbirth.value == dateofbirth.value) || dateofbirth.untouched">Date of Birth is required field</small>
+          
+        </div>
+
+
+        <div class="form-group">
+          <label for="name">Phone</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            required
+            [(ngModel)]="customer.phone"
+            name="phone"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            #phone="ngModel"
+                [class.is-invalid]="phone.invalid && phone.touched">
+                <small class = "text-danger"[class.d-none]="(phone.value == userName.value) || phone.untouched"></small>  
+        </div>
+
+    
+        <div class="form-group">
+          <label for="name">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            required
+            [(ngModel)]="customer.email"
+            name="email"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #email="ngModel"
+                [(ngModel)]="customer.email"
+                title="Please provide valid e-mail address"
+        [class.is-invalid]="email.invalid && email.touched">
+        
+          
+        </div>
+
+
+        <div class="form-group">
+          <label for="name">address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            required
+            [(ngModel)]="customer.address"
+            name="address"
+            #address="ngModel"
+                [class.is-invalid]="address.invalid && address.touched">
+                <small class = "text-danger"[class.d-none]="(address.value == address.value) || address.untouched">Address is required field</small>
+          
+        </div>
+
+    
+        <div class="form-group">
+          <label for="name">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            required
+            [(ngModel)]="customer.username"
+            name="firstName"
+            #userName="ngModel"
+                [class.is-invalid]="userName.invalid && userName.touched">
+                <small class = "text-danger"[class.d-none]="(userName.value == userName.value) || userName.untouched">User Name is required field</small>
+          
+        </div>
+
+
+        <div class="form-group">
+          <label for="name">Password</label>
+          <input
+            type="text"
+            class="form-control"
+            id="password"
+            required
+            [(ngModel)]="customer.password"
+            name="lastName"
+            #password="ngModel"
+                [class.is-invalid]="password.invalid && password.touched">
+                <small class = "text-danger"[class.d-none]="(password.value == password.value) || password.untouched">Password is required field</small>
+          
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+
+    <div [hidden]="!submitted">
+      <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newCustomer()">Add</button> 
+    </div>
+  </form>
+
+</div>

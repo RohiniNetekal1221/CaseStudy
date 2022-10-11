@@ -1,0 +1,29 @@
+
+<app-header></app-header>
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+    <h2>Category List</h2>
+  </div>
+<br><br>
+  <div class="container-fluid">
+    <div class="col-12 col-lg-2" *ngFor="let cat of categories | async">
+      <div class="card" style="width: 18rem">
+        <img src="{{ cat.categoryImage }}" class="img-fluid rounded-start" alt="..." />
+        <div class="card-body">
+          <!-- <h3 class="card-title">{{ cat.categoryID }}</h3> -->
+          <h1 class="card-text">{{ cat.categoryName }}</h1>
+          <button (click)="displayproduct(cat.categoryID)"  type="button" class="btn btn-secondary">View Product</button>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+</div>
+<!-- <a onclick="displayproduct(cat.categoryid)" id="a1" class="nav-link active" aria-current="page" href="#">Add
+  Products</a> -->
+
+
+
+<app-footer></app-footer>

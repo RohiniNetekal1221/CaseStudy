@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3><span class="glyphicon glyphicon-shopping-cart"></span>Cart</h3>
+                            </div>
+                            <div class="col-md-6">
+                                <br>    
+                                <a routerLink="/category">
+                                <button type="button" class="btn btn-primary btn-sm btn-block">
+                                    <span class="glyphicon glyphicon-share-alt"></span> Continue shopping
+                                </button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <table width="90%">
+                    <thead>
+                        <th>Product Image</th>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th></th>
+                    </thead>
+                    <tr *ngFor="let cart of carts | async">
+                        <td><img style="width: 150px; height:auto" src="{{cart.productImage}}"></td>
+                        <td>{{cart.productname}}</td>
+                        <td>Rs. {{cart.price}}</td>
+                        <td><a routerLink="/category"><button (click)="deletecartproduct(cart.productid)"  type="button" class="btn btn-secondary">x</button></a></td>
+                    </tr>
+                
+                </table>
+
+
+
+                <div class="panel-footer">
+                    <div class="row text-center">
+                        <div class="col-9" *ngFor="let tot of total | async">
+                            <h4 class="text-right">Total : Rs. <strong> {{tot.total}} </strong></h4>
+                        </div>
+                        <div class="col-3">
+                            <a routerLink="/payment"><button type="button" class="btn btn-success btn-block">
+                                    Checkout
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<app-footer></app-footer>

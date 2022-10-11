@@ -1,0 +1,45 @@
+<br>
+<br>
+<div class="container" id="container">
+
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<!-- <h1>Hello!<img src="https://www.pngmart.com/files/12/Greeting-Emoji-PNG-Transparent.png" style="width:50px; height:50px;"></h1> -->
+				<p>Enter your details and start journey with us</p>
+				<a routerLink="/create-customer"><button class="ghost" id="signUp">Sign Up</button></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-container sign-in-container">
+		<form action="#" (ngSubmit)="loginUser()">
+			<h1>Sign in</h1>
+      <br><br>
+      <input
+      type="email"
+      placeholder="username"
+      name="username"
+      [(ngModel)]="model.username"
+      #userName="ngModel"
+                [class.is-invalid]="userName.invalid && userName.touched">
+                <small class = "text-danger"[class.d-none]="(userName.value == userName.value) || userName.untouched">User Name is required field</small>
+    
+    <br>
+    <input
+      type="password"
+      placeholder="password"
+      name="password"
+      [(ngModel)]="model.password"
+      #password="ngModel"
+                [class.is-invalid]="password.invalid && password.touched">
+                <small class = "text-danger"[class.d-none]="(password.value == password.value) || password.untouched">Password is required field</small>
+    
+    
+			<a href="#"></a>
+      <button type="submit" class="btn btn-success">Sign In</button>
+      
+		</form>
+	</div>
+
+</div>

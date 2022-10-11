@@ -1,0 +1,70 @@
+<p >product works!</p>
+<app-header></app-header>
+<!--
+ <div  class="panel panel-default">
+    <div  class="panel-heading">
+      <h2>Product List</h2>
+    </div>
+    <div class="panel-body main">
+      <table class="table table-hover table-striped">
+      
+
+        <tbody>
+          <tr *ngFor="let prod of products | async">
+            <td><div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-8">
+                  <img src="{{prod.productImage}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-4">
+                  <div class="card-body">
+                    <h5 class="card-title">{{prod.ProductName}}</h5>
+                    <p class="card-text">{{prod.productDescription}}</p>
+                    <p class="card-text"><small class="text-muted"> updated recently</small></p>
+                    <a routerLink="/cart"><button >Add To Cart </button></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+           
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> 
+-->
+
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+    <h2>Product List</h2>
+  </div>
+  <br><br>
+  <div class="container-fluid">
+    <div class="col-12 col-lg-6" *ngFor="let prod of products | async">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+
+          <div class="col-md-8">
+            <img src="{{prod.productImage}}" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <p  id="abc" class="card-title">{{prod.productName}}</p>
+              <br>
+               <p  style="font-size: medium;" class="card-text">{{prod.productDescription}}</p> 
+              <p style="font-size: medium;" class="card-text">Price : Rs. {{prod.productPrice}} </p><br><br>
+              <a routerLink="/cart"  (click)="addtocart(prod.productID,1)" ><button  type="button" class="btn btn-secondary">Add To Cart </button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+
+</div>
+
+
+<app-footer></app-footer>
